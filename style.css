@@ -278,6 +278,9 @@ footer {
   .contato-mapa {
     height: 300px;
   }
+  .slideshow-container {
+    height: 100vh; /* força usar a tela inteira no mobile */
+  }
 }
 
 /* RESPONSIVIDADE EXTRA */
@@ -288,7 +291,7 @@ footer {
     padding: 15px;
   }
   .slideshow-container {
-    height: 80vh; /* ocupa 80% da tela */
+    height: 100vh; /* ocupa 80% da tela */
   }
   header h1 {
     display: none; /* esconde o título */
@@ -321,7 +324,7 @@ footer {
     grid-template-columns: 1fr; /* 1 coluna em celulares */
   }
   .slideshow-container {
-    height: 70vh; /* ainda grande, mas proporcional */
+    height: 100vh; /* ainda grande, mas proporcional */
   }
 
   .slide img {
