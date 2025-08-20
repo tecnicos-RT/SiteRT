@@ -1,0 +1,320 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0a0a1a, #1c1c3c);
+  color: #f4f4f9;
+  text-align: center;
+  min-height: 100vh;
+  padding-top: 80px; /* espaço pro header fixo */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Cabeçalho */
+header {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.85), rgba(61, 61, 61, 0.85));
+  color: white;
+  padding: 10px 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  position: fixed;   /* Fixa no topo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  text-align: center    ;
+
+
+}
+
+header img {
+  height: 40px;   /* Logo pequena */
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+header h1 {
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  margin-top: 5px;
+}
+header a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+header.links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+
+/* Slideshow */
+.slideshow-container {
+  width: 100vw;
+  height: calc(100vh - 70px);
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* cobre toda a tela sem distorcer */
+  border-radius: 0;  /* remove arredondamento para ocupar toda tela */
+}
+
+.fade {
+  animation: fadeEffect 1.5s;
+}
+
+@keyframes fadeEffect {
+  from {opacity: 0.4;}
+  to {opacity: 1;}
+}
+
+/* Tópicos */
+.topics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 30px; /* espaçamento até a borda */
+  justify-items: center;
+  padding-top: 80px;
+}
+
+.topic {
+  background: linear-gradient(135deg, #8A2BE2, #00AEEF);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+  font-size: 1rem;
+  transition: transform 0.2s ease-in-out, background 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Imagens dos tópicos tamanho fixo */
+.topic img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.topic:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #FF00FF, #004080);
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(90deg, #004080, #8A2BE2);
+  color: white;
+  padding: 30px 20px;
+  margin-top: 40px;
+  box-shadow: 0 -4px 10px rgba(0,0,0,0.4);
+}
+
+.footer-container {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-logo img {
+  width: 50px;
+  height: 50px;
+}
+
+.footer-logo h2 {
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #00AEEF;
+}
+
+.footer-copy {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+.sobre 
+  {
+    padding-top: 70px; /* espaço pro header fixo */
+    padding-bottom: 80px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  opacity: 0.8;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+.contato {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 20px;
+  background: #fff;
+  color: #333;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.contato-info {
+  text-align: left;
+  padding: 20px;
+}
+
+.contato-info h2 {
+  color: #004080;
+  margin-bottom: 10px;
+}
+
+.contato-info hr {
+  border: 1px solid #00AEEF;
+  margin: 10px 0 20px 0;
+}
+
+.contato-info p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.contato-info h3 {
+  margin-top: 20px;
+  color: #004080;
+}
+
+/* Botão WhatsApp */
+.btn-whatsapp {
+  display: inline-block;
+  background: #25d366;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 15px 0;
+  transition: background 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+  background: #1ebe5c;
+}
+
+/* Mapa */
+.contato-mapa {
+  width: 100%;
+  height: 400px;
+}
+
+.contato-mapa iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .contato {
+    grid-template-columns: 1fr;
+  }
+  .contato-mapa {
+    height: 300px;
+  }
+}
+
+/* RESPONSIVIDADE EXTRA */
+@media (max-width: 992px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+  }
+
+  header img {
+    margin-bottom: 10px;
+  }
+
+  header h1 {
+    margin-bottom: 10px;
+  }
+
+  #manuHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .topics {
+    grid-template-columns: 1fr 1fr; /* 2 colunas em tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .topics {
+    grid-template-columns: 1fr; /* 1 coluna em celulares */
+  }
+
+  .contato {
+    grid-template-columns: 1fr; /* já estava, mas reforço */
+  }
+
+  .contato-mapa {
+    height: 250px;
+  }
+
+  .sobre {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
