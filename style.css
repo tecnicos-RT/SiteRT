@@ -287,6 +287,9 @@ footer {
     align-items: center;
     padding: 15px;
   }
+  .slideshow-container {
+    height: 80vh; /* ocupa 80% da tela */
+  }
   header h1 {
     display: none; /* esconde o título */
   }
@@ -316,6 +319,13 @@ footer {
 @media (max-width: 600px) {
   .topics {
     grid-template-columns: 1fr; /* 1 coluna em celulares */
+  }
+  .slideshow-container {
+    height: 70vh; /* ainda grande, mas proporcional */
+  }
+
+  .slide img {
+    object-fit: contain; /* evita cortar muito em telas pequenas */
   }
   body {
     padding-top: 155px; /* ainda mais espaço em celulares */
