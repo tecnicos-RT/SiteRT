@@ -12,7 +12,7 @@ body {
   color: #f4f4f9;
   text-align: center;
   min-height: 100vh;
-  padding-top: 80px; /* espaço pro header fixo */
+  padding-top: 95px; /* espaço pro header fixo */
   font-family: "Cabin", sans-serif;
 }
 
@@ -29,41 +29,26 @@ header {
   z-index: 1000;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  text-align: center    ;
-
-
+  justify-content: space-between;
+  text-align: center;
 }
 
 header img {
-  height: 60px;   /* Logo pequena */
+  height: 80px;   /* Logo pequena */
   margin-right: 10px;
   vertical-align: middle;
 }
 
-header h1 {
-  font-size: 1.6rem;
-  letter-spacing: 1px;
-  margin-top: 5px;
-}
 header a {
   color: white;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
 }
-header.links {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: space-between;
-
-}
-
 /* Slideshow */
 .slideshow-container {
   width: 100vw;
-  height: calc(100vh - 70px);
+  height: calc(100vh - 95px);
   margin: 0;
   position: relative;
   overflow: hidden;
@@ -72,6 +57,7 @@ header.links {
 .slide img {
   width: 100%;
   height: 100%;
+  border-radius: 5px;
   object-fit: cover; /* cobre toda a tela sem distorcer */
   border-radius: 0;  /* remove arredondamento para ocupar toda tela */
 }
@@ -111,6 +97,38 @@ header.links {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #00AEEF;
+}
+
+/* Botão hambúrguer */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
 
 /* Imagens dos tópicos tamanho fixo */
@@ -152,8 +170,8 @@ footer {
 }
 
 .footer-logo img {
-  width: 50px;
-  height: 50px;
+  width: 110px;
+  height: 110px;
 }
 
 .footer-logo h2 {
@@ -183,7 +201,7 @@ footer {
   opacity: 0.8;
 }
 .sobre {
-  padding: 70px 20% 80px 20%; /* espaço só em cima e embaixo */
+  padding: 50px 20% 50px 20%; /* espaço só em cima e embaixo */
   font-family: cab;
   color: whitesmoke;
   display: flex;
@@ -281,30 +299,54 @@ footer {
   .slideshow-container {
     height: 100vh; /* força usar a tela inteira no mobile */
   }
+   .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;   /* logo abaixo do header */
+    right: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+  .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* cobre toda a tela sem distorcer */
+  border-radius: 0;  /* remove arredondamento para ocupar toda tela */
+}
 }
 
 /* RESPONSIVIDADE EXTRA */
 @media (max-width: 992px) {
   header {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+    
     padding: 15px;
   }
   .slideshow-container {
-    height: 100vh; /* ocupa 80% da tela */
-  }
-  header h1 {
-    display: none; /* esconde o título */
-  }
+    height: 80vh; /* ocupa 80% da tela */
+  }  .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down; /* cobre toda a tela sem distorcer */}
+
+
   body {
-    padding-top: 145px; /* aumenta espaço quando header cresce */
+    padding-top: 125px; /* aumenta espaço quando header cresce */
   }
 
   header img {
-    margin-bottom: 10px;
-  }
-
-  header h1 {
     margin-bottom: 10px;
   }
 
@@ -328,10 +370,10 @@ footer {
   }
 
   .slide img {
-    object-fit: contain; /* evita cortar muito em telas pequenas */
+    object-fit: scale-down; /* evita cortar muito em telas pequenas */
   }
   body {
-    padding-top: 155px; /* ainda mais espaço em celulares */
+    padding-top: 120px; /* ainda mais espaço em celulares */
   }
 
   .contato {
