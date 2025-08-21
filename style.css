@@ -47,17 +47,22 @@ header a {
 }
 /* Slideshow */
 .slideshow-container {
-  width: 100vw;
+  width: 99%;
   height: calc(100vh - 95px);
-  margin: 0;
+  margin: 0 auto;
+  text-align: center;
   position: relative;
   overflow: hidden;
+  border-radius: 12px;     /* opcional, arredondar bordas */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4); /* opcional */
+
 }
 
 .slide img {
   width: 100%;
   height: 100%;
-  border-radius: 5px;
+  text-align: center;
+  align-items: center;
   object-fit: cover; /* cobre toda a tela sem distorcer */
   border-radius: 0;  /* remove arredondamento para ocupar toda tela */
 }
@@ -297,7 +302,8 @@ footer {
     height: 300px;
   }
   .slideshow-container {
-    height: 100vh; /* força usar a tela inteira no mobile */
+    height: 99%; /* força usar a tela inteira no mobile */
+    margin: auto;
   }
    .nav-links {
     display: none;
@@ -335,11 +341,12 @@ footer {
     padding: 15px;
   }
   .slideshow-container {
-    height: 80vh; /* ocupa 80% da tela */
+    height: 99%; /* ocupa 80% da tela */
+    margin: auto;
   }  .slide img {
   width: 100%;
   height: 100%;
-  object-fit: scale-down; /* cobre toda a tela sem distorcer */}
+  object-fit: cover; /* cobre toda a tela sem distorcer */}
 
 
   body {
@@ -366,11 +373,12 @@ footer {
     grid-template-columns: 1fr; /* 1 coluna em celulares */
   }
   .slideshow-container {
-    height: 100vh; /* ainda grande, mas proporcional */
+    height: 99%; /* ainda grande, mas proporcional */
+    margin: auto;
   }
 
   .slide img {
-    object-fit: scale-down; /* evita cortar muito em telas pequenas */
+    object-fit: cover; /* evita cortar muito em telas pequenas */
   }
   body {
     padding-top: 120px; /* ainda mais espaço em celulares */
