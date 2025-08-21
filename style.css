@@ -144,6 +144,17 @@ header a {
   border-radius: 10px;
   margin-bottom: 10px;
 }
+.social-icon {
+  font-size: 2rem;       /* tamanho do ícone */
+  color: #E1306C;        /* cor oficial do Instagram */
+  margin: 10px;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-icon:hover {
+  color: #c13584;
+  transform: scale(1.2);
+}
 
 .topic:hover {
   transform: scale(1.05);
@@ -201,12 +212,19 @@ footer {
 }
 
 .footer-links {
+
+  
   display: flex;
+  justify-content: space-evenly;
   gap: 20px;
   flex-wrap: wrap;
 }
+.footer-texto {
+  padding-top: 20px;
+}
 
-.footer-links a {
+.footer-links a 
+{
   color: white;
   text-decoration: none;
   font-weight: bold;
