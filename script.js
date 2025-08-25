@@ -1,6 +1,18 @@
 let slideIndex = 0;
 let slideInterval;
 
+// Popup de contatos
+const openPopup = document.getElementById("openPopup");
+const closePopup = document.getElementById("closePopup");
+const contactPopup = document.getElementById("contactPopup");
+
+openPopup.addEventListener("click", () => {
+  contactPopup.style.display = "flex";
+});
+
+closePopup.addEventListener("click", () => {
+  contactPopup.style.display = "none";
+});
 // Função do slideshow
 function showSlides() {
   let slides = document.getElementsByClassName("slide");
@@ -44,4 +56,8 @@ function updateImages() {
 
 // Executa na carga e no resize
 updateImages();
-window.addEventListener("resize", updateImages);
+window.addEventListener("resize", updateImages, "click", (e) => {
+  if (e.target === contactPopup) {
+    contactPopup.style.display = "none";
+  }
+});

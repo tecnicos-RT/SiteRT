@@ -19,16 +19,17 @@
       <button class="menu-toggle" aria-label="Abrir menu">☰</button>
       <ul class="nav-links">
         <li><a href="#Inicio">Início</a></li>
+        <li><a href="">Produtos</a></li>
         <li><a href="#Serviços">Serviços</a></li>
         <li><a href="#Contato">Contato</a></li>
         <li><a href="#Sobre">Sobre</a></li>
-        <li><a href="">Estabilidade</a></li>
-        <li><a href="">Produtos</a></li>
+        <li><a href="https://rt.inf.br/estabilidade">Estabilidade</a></li>
       </ul>
     </nav>
   </header>
+  <div id="Inicio"></div>
   <!-- Vídeo inicial -->
-<section class="intro-video" autoplay muted id="Inicio">
+<section class="intro-video" >
   <video id="introVideo" autoplay muted>
     <source src="Imgs/LOGO RT 3D.mp4" type="video/mp4">
     Seu navegador não suporta vídeo.
@@ -102,9 +103,20 @@
       Estamos prontos para atender você com agilidade e confiança!
     </p>
 
-    <a class="btn-whatsapp" href="https://wa.me/554791897408" target="_blank">
-      💬 Fale Conosco
-    </a>
+    <button class="btn-whatsapp" id="openPopup">💬 Fale Conosco</button>
+
+<!-- Modal -->
+<div id="contactPopup" class="popup-overlay">
+  <div class="popup-content">
+    <span class="popup-close" id="closePopup">&times;</span>
+    <h2>Fale com a RT Informática</h2>
+    <div class="popup-links">
+      <a href="https://wa.me/554733332785" target="_blank"> 🛒 Vendas & Agendamentos 📜<br></a>
+      <a href="https://wa.me/554791869352" target="_blank">📜 Certificados Digitais e Vendas 🛒<br></a>
+      <a href="https://wa.me/554791823812" target="_blank">🛠 Técnico Interno 🛠<br></a>
+    </div>
+  </div>
+</div>
 
     <h3>Endereço</h3>
     <p>Av. Pioneiros, 59 - Centro, Indaial - SC, 89080-012, Brasil</p>

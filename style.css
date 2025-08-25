@@ -18,7 +18,7 @@ body {
 
 /* Cabeçalho */
 header {
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.85), rgba(61, 61, 61, 0.85));
+  background: linear-gradient(90deg, #0059ffc0, #5f95c198);
   color: white;
   padding: 10px 20px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
@@ -85,7 +85,7 @@ header a {
   margin: 40px auto;
   padding: 0 30px; /* espaçamento até a borda */
   justify-items: center;
-  padding-top: 80px;
+  padding-top: 115px;
 }
 
 .topic {
@@ -222,6 +222,80 @@ footer {
 .footer-texto {
   padding-top: 20px;
 }
+/* Fundo escuro transparente */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: none; /* escondido por padrão */
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* Caixinha central */
+.popup-content {
+  background: #fff;
+  color: #333;
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  animation: popIn 0.3s ease;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Botão fechar (X) */
+.popup-close {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #ff3333;            /* vermelho forte */
+  cursor: pointer;
+  background: #fff;
+  border: 2px solid #ff3333;
+  border-radius: 50%;        /* deixa circular */
+  width: 40px;
+  height: 40px;
+  line-height: 36px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+}
+
+/* Links dentro do popup */
+.popup-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.popup-links a {
+  background: #00AEEF;
+  color: white;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.popup-links a:hover {
+  background: #0077aa;
+  transform: scale(1.05);
+}
 
 .footer-links a 
 {
@@ -240,7 +314,7 @@ footer {
   opacity: 0.8;
 }
 .sobre {
-  padding: 50px 20% 50px 20%; /* espaço só em cima e embaixo */
+  padding: 115px 20% 50px 20%; /* espaço só em cima e embaixo */
   font-family: cab;
   color: whitesmoke;
   display: flex;
@@ -258,6 +332,9 @@ footer {
 .sobre img{
   width: 90%;
   border-radius: 10px;
+}
+#inicio{
+  padding: 115px;
 }
 .contato {
   display: grid;
