@@ -15,6 +15,9 @@ body {
   padding-top: 95px; /* espaço pro header fixo */
   font-family: "Cabin", sans-serif;
 }
+section {
+  scroll-margin-top: 115px;
+}
 
 /* Cabeçalho */
 header {
@@ -45,8 +48,12 @@ header a {
   font-weight: bold;
   transition: color 0.3s;
 }
+#Inicio {
+  scroll-margin-top: 110px; /* altura do header */
+}
 /* Slideshow */
 .slideshow-container {
+  
   width: 99%;
   height: calc(100vh - 95px);
   margin: 0 auto;
@@ -85,7 +92,6 @@ header a {
   margin: 40px auto;
   padding: 0 30px; /* espaçamento até a borda */
   justify-items: center;
-  padding-top: 115px;
 }
 
 .topic {
@@ -333,9 +339,6 @@ footer {
   width: 90%;
   border-radius: 10px;
 }
-#inicio{
-  padding: 115px;
-}
 .contato {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -403,6 +406,9 @@ footer {
   height: 100%;
   border: 0;
 }
+#Sobre {
+  scroll-margin-top: 0;
+}
 
 /* Responsivo */
 @media (max-width: 768px) {
@@ -440,6 +446,7 @@ footer {
   object-fit: contain; /* cobre toda a tela sem distorcer */
   border-radius: 0;  /* remove arredondamento para ocupar toda tela */
 }
+
 }
 
 /* RESPONSIVIDADE EXTRA */

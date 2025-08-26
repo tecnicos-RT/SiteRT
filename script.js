@@ -26,7 +26,7 @@ function showSlides() {
 
 // Função que inicia o loop do slideshow
 function startSlideshow() {
-  document.getElementById("slideshow").style.display = "block";
+  document.getElementById("Slideshow").style.display = "block";
   showSlides();
   slideInterval = setInterval(showSlides, 3000); // troca a cada 3s
 }
