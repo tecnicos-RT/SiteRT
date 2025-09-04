@@ -64,6 +64,17 @@ header a {
   box-shadow: 0 6px 20px rgba(0,0,0,0.4); /* opcional */
 
 }
+#topicPopup .popup-content {
+  max-width: 600px;
+  text-align: center;
+}
+
+#topicPopup img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
 
 .slide img {
   width: 100%;
@@ -144,8 +155,8 @@ header a {
 
 /* Imagens dos tópicos tamanho fixo */
 .topic img {
-  width: 120px;
-  height: 120px;
+  width: 90%;
+  height: 90%;
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 10px;
@@ -253,6 +264,7 @@ footer {
   text-align: center;
   box-shadow: 0 8px 20px rgba(0,0,0,0.4);
   animation: popIn 0.3s ease;
+  position: relative;
 }
 
 @keyframes popIn {
@@ -262,9 +274,9 @@ footer {
 
 /* Botão fechar (X) */
 .popup-close {
-  position: absolute;
-  top: 15px;
-  right: 25px;
+  position: absolute;   /* fixa dentro do popup */
+  top: 10px;            /* distância do topo */
+  right: 10px;        
   font-size: 2.2rem;
   font-weight: bold;
   color: #ff3333;            /* vermelho forte */
@@ -277,7 +289,6 @@ footer {
   line-height: 36px;
   text-align: center;
   transition: all 0.3s ease;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
 }
 
 /* Links dentro do popup */
@@ -341,6 +352,8 @@ footer {
 }
 .contato {
   display: grid;
+  align-items: center;
+  align-content: center;
   grid-template-columns: 1fr 1fr;
   align-items: stretch;
   gap: 20px;
@@ -352,6 +365,7 @@ footer {
   border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0,0,0,0.2);
 }
+
 
 .contato-info {
   text-align: left;
@@ -374,12 +388,14 @@ footer {
 .contato-info p {
   margin-bottom: 15px;
   line-height: 1.6;
+  margin: 10px;
 }
 
 .contato-info h3 {
   margin-top: 20px;
   color: #004080;
 }
+
 
 /* Botão WhatsApp */
 .btn-whatsapp {
@@ -416,11 +432,111 @@ footer {
   scroll-margin-top: 0;
 }
 #Serviços{
-  scroll-margin-top: 100px;
+  scroll-margin-top: 50px;
   font-size: 30px;
   padding-top: 50px;
 
 }
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #25D366;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 5px;
+}
+
+.btn-whatsapp i {
+  font-size: 20px;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebe5d;
+}
+
+/* Endereço e telefone com ícones */
+.contato-info p i {
+  margin-right: 8px;
+  color: #333;
+  margin: 5px;
+}
+.why-choose {
+  background: linear-gradient(135deg, #0a0a1a, #1c1c3c);
+  color: #f4f4f9;
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.why-choose .title {
+  font-size: 2rem;
+  margin-bottom: 50px;
+  color: #00AEEF;
+}
+
+.why-choose .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.feature {
+  background: rgba(255,255,255,0.05);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.feature .badge {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  color: white;
+  background: linear-gradient(135deg, #8A2BE2, #00AEEF);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.feature h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #b6d7ff;
+}
+
+.feature p {
+  font-size: 0.95rem;
+  color: #ddd;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .why-choose .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .why-choose .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /* Responsivo */
 @media (max-width: 768px) {

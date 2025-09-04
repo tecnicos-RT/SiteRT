@@ -5,6 +5,19 @@ let slideInterval;
 const openPopup = document.getElementById("openPopup");
 const closePopup = document.getElementById("closePopup");
 const contactPopup = document.getElementById("contactPopup");
+const topicPopup = document.getElementById("topicPopup");
+const closeTopicPopup = document.getElementById("closeTopicPopup");
+const popupImage = document.getElementById("popupImage");
+const popupTitle = document.getElementById("popupTitle");
+const popupDescription = document.getElementById("popupDescription");
+const topicDescriptions = {
+  "Soluções Corporativas": "Oferecemos infraestrutura completa de TI para empresas, com redes, servidores e suporte dedicado.",
+  "Setups Gamers": "Montamos PCs gamers de alta performance, com as melhores peças e personalização completa.",
+  "Montagem & Manutenção": "Serviços de upgrade, manutenção preventiva e corretiva em computadores e notebooks.",
+  "Certificado Digital": "Emissão e renovação de certificados digitais para empresas e pessoas físicas.",
+  "Manutenção de impressoras": "Conserto e manutenção de impressoras laser, jato de tinta e multifuncionais.",
+  "Câmeras de Segurança": "Instalação e configuração de sistemas de monitoramento com câmeras de segurança."
+};
 
 openPopup.addEventListener("click", () => {
   contactPopup.style.display = "flex";
@@ -48,6 +61,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+document.querySelectorAll(".topic").forEach(topic => {
+  topic.addEventListener("click", () => {
+    const img = topic.querySelector("img");
+    const title = topic.innerText.trim();
+
+    popupImage.src = img.src;
+    popupTitle.textContent = title;
+    popupDescription.textContent = topicDescriptions[title] || "Descrição em breve...";
+
+    topicPopup.style.display = "flex";
+  });
+});
+// Fechar popup
+closeTopicPopup.addEventListener("click", () => {
+  topicPopup.style.display = "none";
+});
 
 // Troca de imagens desktop/mobile
 function updateImages() {
@@ -62,5 +91,10 @@ updateImages();
 window.addEventListener("resize", updateImages, "click", (e) => {
   if (e.target === contactPopup) {
     contactPopup.style.display = "none";
+  }
+});
+window.addEventListener("click", (e) => {
+  if (e.target === topicPopup) {
+    topicPopup.style.display = "none";
   }
 });
