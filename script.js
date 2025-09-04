@@ -38,12 +38,15 @@ introVideo.addEventListener("ended", () => {
   startSlideshow(); // inicia slides
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
 
-// Menu hambúrguer
-const toggleBtn = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
-toggleBtn.addEventListener('click', () => {
-  navLinks.classList.toggle('show');
+  if (toggleBtn && navLinks) {
+    toggleBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  }
 });
 
 // Troca de imagens desktop/mobile
